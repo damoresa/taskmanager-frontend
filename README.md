@@ -19,6 +19,15 @@ The purpose of the application is to actually help myself manage
 my own time in order to be able to analyze certain scenarios.
   
   
+### Project structure
+  
+The project contains the following folders:
+* __Config__: _Webpack_ configuration files. The current build supports an _electron_ 
+build in order to deploy the frontend application as a desktop application.
+* __karma__: _Karma_ environment configuration.
+* __src__: application sources.
+  
+  
 ### Frontend
   
 The frontend application has been built with _Angular_ and _Webpack_. 
