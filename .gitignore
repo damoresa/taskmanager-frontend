@@ -4,6 +4,7 @@
 
 # Angular
 asar
+cordova
 dist
 tsconfig-test.json
 

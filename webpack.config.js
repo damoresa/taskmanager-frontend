@@ -11,6 +11,12 @@ switch (process.env.NODE_ENV) {
         console.log('************************************\n');
         module.exports = require('./config/webpack.prod.aot');
         break;
+    case 'cordova':
+        console.log('*******************************');
+        console.log('******   CORDOVA BUILD   ******');
+        console.log('*******************************\n');
+        module.exports = require('./config/webpack.cordova');
+        break;
     case 'electron':
         console.log('********************************');
         console.log('******   ELECTRON BUILD   ******');
