@@ -1,0 +1,13 @@
+# IDE
+.idea
+*.iml
+
+# Angular
+dist
+tsconfig-test.json
+
+# NodeJS
+coverage
+node_modules
+.npmrc
+*.log*
