@@ -8,4 +8,5 @@ script: npm run build:production:aot
 deploy:
   provider: surge
   project: ./dist/
-  domain: ng-taskmanager.surge.sh  
+  domain: ng-taskmanager.surge.sh
+  skip_cleanup: true
