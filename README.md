@@ -39,6 +39,9 @@ This frotend features:
 * __Http__: http requests and _RxJS_ usage, wrapped to provide _JWT_ support.
 * __Components__: contains _grid_, _pagination_, _toast_ and _modal_ 
 reusable and configuratble components.
+* __Multiplatform__: supports _electron_ out of the box and a desktop client is 
+released on every tag. On the future, it'll also be integrated with _Cordova_ in 
+order to generate hybrid mobile applications.
   
 _Webpack_ manages the application and resources bundling and minification.
   
@@ -51,9 +54,10 @@ which can be found [here](https://github.com/damoresa/taskmanager).
   
 ### Future features
   
-You can check future features [here](https://github.com/damoresa/taskmanager#future-features).
-Also, you can expect unit tests on the frontend - using _Karma_ 
-and _Jasmine_ - soon enough.
+You can check future features [here](https://github.com/damoresa/taskmanager#future-features).  
+In addition to those, you can expect these:
+* Unit tests using _Karma_ and _Jasmine_.
+* Mobile integration with _Cordova_.
   
   
 ### Running the project
