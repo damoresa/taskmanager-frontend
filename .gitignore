@@ -3,6 +3,7 @@
 *.iml
 
 # Angular
+asar
 dist
 tsconfig-test.json
 
