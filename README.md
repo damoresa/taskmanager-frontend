@@ -15,6 +15,11 @@ frontend is designed to be deployed on any CDN like [surge](https://surge.sh/).
 As of 5/12/2017 the application goes through _TravisCI_ and _Coveralls_ 
 and is automatically deployed to _surge_. Unit tests are not yet implemented tho.
   
+As of 6/12/2017 the frontend application is _multiplatform_ and works in the 
+browser, on desktop and on Android devices with the same source code. 
+[Cordova](https://cordova.apache.org/) is used for mobile integration 
+and [electron](https://electronjs.org/) is used for desktop integration.
+  
 The purpose of the application is to actually help myself manage 
 my own time in order to be able to analyze certain scenarios.
   
@@ -39,9 +44,8 @@ This frotend features:
 * __Http__: http requests and _RxJS_ usage, wrapped to provide _JWT_ support.
 * __Components__: contains _grid_, _pagination_, _toast_ and _modal_ 
 reusable and configuratble components.
-* __Multiplatform__: supports _electron_ out of the box and a desktop client is 
-released on every tag. On the future, it'll also be integrated with _Cordova_ in 
-order to generate hybrid mobile applications.
+* __Multiplatform__: supports _electron_ and _Cordova_ out of the box: an _electron_ 
+desktop client and a _Cordova_ Android apk are released with every tag.
   
 _Webpack_ manages the application and resources bundling and minification.
   
@@ -57,7 +61,6 @@ which can be found [here](https://github.com/damoresa/taskmanager).
 You can check future features [here](https://github.com/damoresa/taskmanager#future-features).  
 In addition to those, you can expect these:
 * Unit tests using _Karma_ and _Jasmine_.
-* Mobile integration with _Cordova_.
   
   
 ### Running the project
