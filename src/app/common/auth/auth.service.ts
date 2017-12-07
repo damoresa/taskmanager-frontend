@@ -28,11 +28,12 @@ export class AuthService {
     login(auth: AuthModel) {
         // This subscription is deemed neccesary in order to emit to more than a single component in the application.
         const headers = new Headers({'Content-Type': 'application/json'});
-        const requestOptions = new RequestOptions(headers => requestOptions);
+        const requestOptions = new RequestOptions(headers => headers);
         this.http.post(this.BASE_URL + this.LOGIN_ENDPOINT, auth, requestOptions)
             .map((response) => response ? response.json() : {})
             .catch(this.manageError)
             .subscribe(
+				// This is never gonna fail because the previous catch would hide the error.
                 (data) => {
                     if (data && data.token) {
                         this.sessionStore.token = data.token;
@@ -42,10 +43,6 @@ export class AuthService {
                         const authEvent = new AuthEvent(false, auth.username, `Error when logging in as ${auth.username}`);
                         this.userAuthenticated.next(authEvent);
                     }
-                },
-                (error) => {
-                    const authEvent = new AuthEvent(false, auth.username, `Error when logging in as ${auth.username}`);
-                    this.userAuthenticated.next(authEvent);
                 }
             );
     }
@@ -69,6 +66,10 @@ export class AuthService {
         const authEvent = new AuthEvent(false, '', 'User logged out');
         this.userAuthenticated.next(authEvent);
     }
+	
+	sessionStatusSubject(): Subject<AuthEvent> {
+		return this.userAuthenticated;
+	}
 
     sessionStatus(): Observable<AuthEvent> {
         return this.userAuthenticated.asObservable();

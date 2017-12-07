@@ -93,7 +93,7 @@ describe('HeaderComponent', () => {
 	})));
 	
 	it('initializes well (login error)', async(inject([AuthService], (authService: AuthService) => {
-		spyOn(authService, 'sessionStatus').and.returnValue(Observable.throw({status: 500}));
+		spyOn(authService, 'sessionStatus').and.returnValue(Observable.throw({ status: 500 }));
 		
 		component.ngOnInit();
 		fixture.detectChanges();

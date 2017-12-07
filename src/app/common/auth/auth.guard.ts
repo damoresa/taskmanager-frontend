@@ -9,12 +9,10 @@ export class AuthGuard implements CanActivate {
     constructor(private authService: AuthService, private router: Router) {}
 
     canActivate(route: ActivatedRouteSnapshot, state: RouterStateSnapshot): boolean {
-        const url = state.url;
-
-        return this.checkAuth(url);
+        return this.checkAuth();
     }
 
-    private checkAuth(url: string): boolean {
+    private checkAuth(): boolean {
         const authed: boolean = this.authService.isAuthed();
 
         if (!authed) {

@@ -1,6 +1,6 @@
 import { TestBed, inject } from '@angular/core/testing';
 
-import { HttpModule } from '@angular/http';
+import { Headers, HttpModule, Response, ResponseOptions, ResponseOptionsArgs } from '@angular/http';
 
 import { Observable } from 'rxjs/Observable';
 
@@ -44,7 +44,14 @@ describe('CombosService', () => {
 	
 	it('loads projects (results)', inject([CombosService, HttpWrapper],
 		(combosService: CombosService, http: HttpWrapper) => {
-			spyOn(http, 'get').and.returnValue(Observable.of(mockedProjectData));
+			const response: Response = new Response({
+				'body': mockedProjectData,
+				'headers': new Headers(),
+				'merge': (options?: ResponseOptionsArgs) => { return new ResponseOptions() },
+				'status': 200,
+				'url': 'testEndpoint',
+			});
+			spyOn(http, 'get').and.returnValue(Observable.of(response));
 			combosService.getProjects().subscribe(
 				(data) => {
 					expect(data).toBe(mockedProjectData);
@@ -55,10 +62,18 @@ describe('CombosService', () => {
 	
 	it('loads projects (no results)', inject([CombosService, HttpWrapper],
 		(combosService: CombosService, http: HttpWrapper) => {
-			spyOn(http, 'get').and.returnValue(Observable.of([]));
+			const emptyProjectData = [];
+			const response: Response = new Response({
+				'body': emptyProjectData,
+				'headers': new Headers(),
+				'merge': (options?: ResponseOptionsArgs) => { return new ResponseOptions() },
+				'status': 200,
+				'url': 'testEndpoint',
+			});
+			spyOn(http, 'get').and.returnValue(Observable.of(response));
 			combosService.getProjects().subscribe(
 				(data) => {
-					expect(data).toBe([]);
+					expect(data).toBe(emptyProjectData);
 				},
 				(error) => { console.error(` # ERROR # ${error} `); }
 			);

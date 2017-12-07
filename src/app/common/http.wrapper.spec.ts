@@ -1,4 +1,4 @@
-import { TestBed, inject } from '@angular/core/testing';
+import { inject, TestBed } from '@angular/core/testing';
 
 import { Headers, Http, HttpModule, RequestOptions } from '@angular/http';
 
@@ -34,7 +34,7 @@ describe('HttpWrapper', () => {
 			// Property spies are not supported on my current version of Jasmine, so this 
 			// ugly workaround is in order: manually create a spy and attach it to the object
 			const token = 'EXTOKEN';
-			const getSpy = jasmine.createSpy().and.returnValue(token)
+			const getSpy = jasmine.createSpy().and.returnValue(token);
 			Object.defineProperty(sessionStore, 'token', { get: getSpy });
 			
 			const headers = new Headers();
@@ -61,7 +61,6 @@ describe('HttpWrapper', () => {
 			httpWrapper.addAuthHeader(requestOptions);
 			
 			// Token is displayed on a really weird way as if the `` weren't being processed
-			console.log(requestOptions.headers.keys());
 			expect(getSpy).toHaveBeenCalled();
 			expect(requestOptions.headers).toBeDefined();
 			expect(requestOptions.headers.has('Authorization')).toBe(true);

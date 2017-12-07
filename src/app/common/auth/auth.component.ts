@@ -15,7 +15,7 @@ export class AuthComponent {
     authForm;
     authModal: string = 'authModal';
 
-    @ViewChild(Th2ModalComponent) private modal: Th2ModalComponent;
+    @ViewChild(Th2ModalComponent) modal: Th2ModalComponent;
 
     constructor(private authService: AuthService,
                 @Inject(FormBuilder) formBuilder: FormBuilder) {
