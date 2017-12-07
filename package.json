@@ -25,7 +25,7 @@
     "provide:cordova": "rimraf cordova/config.xml && cp config.xml cordova && rimraf cordova/www/* && cp -r dist/* cordova/www && rimraf dist",
     "android:cordova": "cd cordova && cordova platform add android && cordova build android",
     "browser:cordova": "cd cordova && cordova platform add browser",
-	"package:cordova": "npm run provide:cordova && npm run android:cordova",
+    "package:cordova": "npm run provide:cordova && npm run android:cordova",
     "build:cordova": "npm run clean && npm run create:cordova && npm run compile:cordova && npm run package:cordova",
     "****** ELECTRON BUILD ******": "",
     "tsc:electron": "tsc main.electron.ts --outDir dist && mv dist/main.electron.js dist/main.js",

@@ -83,18 +83,18 @@ export class Th2PaginationComponent implements AfterViewInit {
      * Function invoked when the 'First page' button is clicked.
      */
     firstPage() {
-        let firstPage = 1;
+        const firstPage = 1;
         if (firstPage !== this.currentPage) {
             this.pageChanged.emit(firstPage);
         }
     }
 
     /**
-     * Function invoked when the 'Next page' button is clicked.
+     * Function invoked when the 'Previous page' button is clicked.
      */
-    nextPage() {
-        if (this.currentPage < this.noPages) {
-            let next: number = this.currentPage + 1;
+    previousPage() {
+        if (this.currentPage > 1) {
+            const next: number = this.currentPage - 1;
             this.pageChanged.emit(next);
         }
     }
@@ -109,11 +109,11 @@ export class Th2PaginationComponent implements AfterViewInit {
     }
 
     /**
-     * Function invoked when the 'Previous page' button is clicked.
+     * Function invoked when the 'Next page' button is clicked.
      */
-    previousPage() {
-        if (this.currentPage > 1) {
-            let next: number = this.currentPage - 1;
+    nextPage() {
+        if (this.currentPage < this.noPages) {
+            const next: number = this.currentPage + 1;
             this.pageChanged.emit(next);
         }
     }

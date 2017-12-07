@@ -69,7 +69,7 @@ module.exports = function (config) {
 
     singleRun: true,
 
-    reporters: ['progress', 'coverage'],
+    reporters: ['spec', 'progress', 'coverage'],
 
     webpack: webpackConfig,
 

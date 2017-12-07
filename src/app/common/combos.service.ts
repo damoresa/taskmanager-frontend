@@ -2,8 +2,8 @@ import { Inject, Injectable } from '@angular/core';
 
 import { Observable } from 'rxjs/Observable';
 
-import { BaseuriInjectionToken } from './../common/baseuri.injection.token';
-import { HttpWrapper } from './../common/http.wrapper';
+import { BaseuriInjectionToken } from './baseuri.injection.token';
+import { HttpWrapper } from './http.wrapper';
 
 @Injectable()
 export class CombosService {

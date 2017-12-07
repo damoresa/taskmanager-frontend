@@ -5,6 +5,9 @@ import { Observable } from 'rxjs/Observable';
 
 import { SessionStore } from './auth/session.store';
 
+// TODO: Move this wrapper into the auth module and import angular's http module from there
+// The application will then only import this one, which is the one to be used
+
 @Injectable()
 export class HttpWrapper {
 

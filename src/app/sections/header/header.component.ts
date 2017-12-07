@@ -16,7 +16,7 @@ export class HeaderComponent implements OnDestroy, OnInit {
     authenticated: boolean = false;
     username: string;
 
-    @ViewChild(AuthComponent) private authComponent: AuthComponent;
+    @ViewChild(AuthComponent) authComponent: AuthComponent;
     private authSubscription;
     
     constructor(private authService: AuthService, private router: Router) {}
