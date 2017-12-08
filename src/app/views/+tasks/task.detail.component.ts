@@ -45,7 +45,9 @@ export class TaskDetailComponent implements OnDestroy, OnInit {
 
 	ngOnDestroy() {
 		// Clear the subscription when leaving the page
-		this.subscription.unsubscribe();
+		if (this.subscription) {
+			this.subscription.unsubscribe();
+		}
 	}
 
 	loadTask() {

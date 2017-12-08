@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { BaseuriInjectionToken } from './../../common/baseuri.injection.token';
 import { HttpWrapper } from './../../common/http.wrapper';
 
+// TODO: Improve error management and add a model
+
 @Injectable()
 export class TasksService {
 
@@ -75,9 +77,5 @@ export class TasksService {
 
         return this.http.post(this.BASE_URL + this.BASE_ENDPOINT + '/' + taskCode + '/link', linkedTask, requestOptions)
             .map((response) => response ? response.json() : {});
-    }
-
-    handleError(error) {
-        return Observable.of({ code: 'BK-001', message: 'Error when querying backend' });
     }
 }

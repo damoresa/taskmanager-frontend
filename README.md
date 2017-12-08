@@ -20,6 +20,11 @@ browser, on desktop and on Android devices with the same source code.
 [Cordova](https://cordova.apache.org/) is used for mobile integration 
 and [electron](https://electronjs.org/) is used for desktop integration.
   
+As of 08/12/2017, the _Karma_ and _Jasmine_ unit tests have been implemented, but 
+no template validation has been implemented - ie, accessing the DOM objects from 
+the unit tests context. _Coveralls_ has been integrated and the coverage result is 
+displayed.
+  
 The purpose of the application is to actually help myself manage 
 my own time in order to be able to analyze certain scenarios.
   
@@ -60,7 +65,7 @@ which can be found [here](https://github.com/damoresa/taskmanager).
   
 You can check future features [here](https://github.com/damoresa/taskmanager#future-features).  
 In addition to those, you can expect these:
-* Unit tests using _Karma_ and _Jasmine_.
+* Success / error notification toasts on the different actions in order to improve UX.
   
   
 ### Running the project

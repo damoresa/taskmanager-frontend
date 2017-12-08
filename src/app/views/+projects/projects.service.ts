@@ -6,6 +6,8 @@ import { Observable } from 'rxjs';
 import { BaseuriInjectionToken } from './../../common/baseuri.injection.token';
 import { HttpWrapper } from './../../common/http.wrapper';
 
+// TODO: Improve error management and add a model
+
 @Injectable()
 export class ProjectsService {
 

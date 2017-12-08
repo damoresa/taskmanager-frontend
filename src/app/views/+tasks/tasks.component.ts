@@ -23,7 +23,7 @@ export class TasksComponent implements OnInit {
 	projects = [];
 	tasks;
 
-    @ViewChildren(Th2ModalComponent) private modals: QueryList<Th2ModalComponent>;
+    @ViewChildren(Th2ModalComponent) modals: QueryList<Th2ModalComponent>;
     private selectedTask;
     private TIME_PATTERN: string = '^[0-9]+(d|h|m){1}(\\s+[0-9]+(d|h|m){1})*$';
 
@@ -67,6 +67,7 @@ export class TasksComponent implements OnInit {
 	loadProjects() {
 		this.combosService.getProjects().subscribe(
 			(projects) => {
+				this.projects = [];
                 this.projects.push({ code: '', description: 'Choose a project...' });
                 this.projects = this.projects.concat(projects);
 			},
