@@ -15,7 +15,7 @@ export class ProjectsComponent implements OnInit {
 
     projects;
 
-    @ViewChildren(Th2ModalComponent) private modals: QueryList<Th2ModalComponent>;
+    @ViewChildren(Th2ModalComponent) modals: QueryList<Th2ModalComponent>;
 
     constructor(
         @Inject(FormBuilder) private formBuilder: FormBuilder,

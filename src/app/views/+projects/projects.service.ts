@@ -31,8 +31,4 @@ export class ProjectsService {
         return this.http.post(this.BASE_URL + this.BASE_ENDPOINT, project, requestOptions)
             .map((response) => response ? response.json() : {});
     }
-
-    handleError(error) {
-        return Observable.of({ code: 'BK-001', message: 'Error when querying backend' });
-    }
 }

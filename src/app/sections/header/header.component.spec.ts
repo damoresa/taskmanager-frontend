@@ -106,13 +106,18 @@ describe('HeaderComponent', () => {
 		});
 	})));
 	
-	it('destroys well', inject([AuthService], (authService: AuthService) => {
+	it('destroys well', async(inject([AuthService], (authService: AuthService) => {
 		const authEvent = new AuthEvent(true, 'damoresa', undefined);
 		spyOn(authService, 'sessionStatus').and.returnValue(Observable.of(authEvent));
 		
 		component.ngOnInit();
-		component.ngOnDestroy();
-	}));
+		fixture.detectChanges();
+		
+		fixture.whenStable().then(() => {
+			fixture.detectChanges();
+			component.ngOnDestroy();
+		});
+	})));
 	
 	it('displays login', () => {
 		component.login();
