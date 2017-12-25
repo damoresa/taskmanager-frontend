@@ -2,6 +2,7 @@
 
 [![Build Status](https://travis-ci.org/damoresa/taskmanager-frontend.svg?branch=master)](https://travis-ci.org/damoresa/taskmanager-frontend)
 [![Coverage Status](https://coveralls.io/repos/github/damoresa/taskmanager-frontend/badge.svg)](https://coveralls.io/github/damoresa/taskmanager-frontend)
+[![SonarCloud Status](https://sonarcloud.io/api/badges/gate?key=taskmanager-frontend)](https://sonarcloud.io/dashboard?id=taskmanager-frontend)
 
 Task management application that features an _Angular_ frontend 
 and a [_NodeJS_ backend](https://github.com/damoresa/taskmanager) 
@@ -24,6 +25,8 @@ As of 08/12/2017, the _Karma_ and _Jasmine_ unit tests have been implemented, bu
 no template validation has been implemented - ie, accessing the DOM objects from 
 the unit tests context. _Coveralls_ has been integrated and the coverage result is 
 displayed.
+
+As of 25/12/2017 _SonarCloud_ support has been implemented.
   
 The purpose of the application is to actually help myself manage 
 my own time in order to be able to analyze certain scenarios.
