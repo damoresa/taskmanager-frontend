@@ -1,6 +1,6 @@
 {
   "name": "taskmanger-frontend",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Simple task manager application. Angular frontend project.",
   "main": "main.js",
   "scripts": {
