@@ -9,9 +9,7 @@ addons:
     organization: "damoresa-github"
     token:
       secure: $SONAR_TOKEN
-script:
-  - sonar-scanner
-  - npm run build:production:aot && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+script: npm run build:production:aot && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && sonar-scanner
 deploy:
   provider: surge
   project: ./dist/
