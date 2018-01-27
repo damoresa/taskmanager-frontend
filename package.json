@@ -1,6 +1,6 @@
 {
   "name": "taskmanger-frontend",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Simple task manager application. Angular frontend project.",
   "main": "main.js",
   "scripts": {
@@ -89,7 +89,7 @@
     "coveralls": "3.0.0",
     "cross-env": "5.0.0",
     "css-loader": "0.28.0",
-    "electron": "1.6.11",
+    "electron": "1.6.16",
     "enhanced-resolve": "3.3.0",
     "exports-loader": "0.6.4",
     "extract-text-webpack-plugin": "2.1.0",
