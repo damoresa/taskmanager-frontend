@@ -67,6 +67,8 @@ module.exports = [
         "window.jQuery": "jquery",
         Tether: "tether",
         "window.Tether": "tether",
+        Popper: "popper.js",
+        "window.Popper": "popper.js",
         Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
         Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
         Button: "exports-loader?Button!bootstrap/js/dist/button",
