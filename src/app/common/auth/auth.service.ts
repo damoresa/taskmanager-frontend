@@ -28,7 +28,7 @@ export class AuthService {
     login(auth: AuthModel) {
         // This subscription is deemed neccesary in order to emit to more than a single component in the application.
         const headers = new Headers({'Content-Type': 'application/json'});
-        const requestOptions = new RequestOptions(headers => headers);
+        const requestOptions = new RequestOptions({ headers: headers });
         this.http.post(this.BASE_URL + this.LOGIN_ENDPOINT, auth, requestOptions)
             .map((response) => response ? response.json() : {})
             .catch(this.manageError)

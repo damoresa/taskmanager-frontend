@@ -1,5 +1,9 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
+import * as $ from 'jquery';
+import 'popper.js';
+import 'bootstrap';
+
 import { Th2ModalComponent } from './th2-modal.component';
 
 describe('Th2ModalComponent', () => {
@@ -25,22 +29,21 @@ describe('Th2ModalComponent', () => {
 	it('creates an instance', () => {
 		expect(component).toBeDefined();
 	});
-	/* TODO: Find a way to inject jQuery into the jasmine tests context
+
 	it('shows the modal', () => {
-		// spyOn($, 'modal');
+		spyOn($.fn, 'modal');
 		component.show();
 		
-		// expect($.fn.modal).toHaveBeenCalled();
-		// expect($.fn.modal).toHaveBeenCalledWith('show');
+		expect($.fn.modal).toHaveBeenCalled();
+		expect($.fn.modal).toHaveBeenCalledWith('show');
 	});
 	
 	it('dismisses the modal', () => {
-		// spyOn($.fn, 'modal');
+		spyOn($.fn, 'modal');
 		component.dismiss();
 		
-		// expect($.fn.modal).toHaveBeenCalled();
-		// expect($.fn.modal).toHaveBeenCalledWith('hide');
+		expect($.fn.modal).toHaveBeenCalled();
+		expect($.fn.modal).toHaveBeenCalledWith('hide');
 	});
-	*/
 	
 });
