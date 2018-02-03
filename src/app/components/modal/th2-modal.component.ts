@@ -3,7 +3,7 @@ import { Component, Input } from '@angular/core';
 import { TH2_MODAL_TEMPLATE } from './th2-modal.template';
 
 // Dummy variable so that we can compile the usage of jQuery within Typescript
-declare const $;
+import * as $ from 'jquery';
 
 /**
  * Thin2.0 Modal component which renders a modal window transcluding the header, body and footer sections.

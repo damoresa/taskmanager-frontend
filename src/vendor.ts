@@ -11,7 +11,13 @@ import '@angular/platform-browser-dynamic';
 import 'rxjs/Rx';
 
 // Bootstrap 4 dependencies
-import 'tether';
+import 'jquery';
+import 'popper.js';
+import 'bootstrap';
+
+// Styles
+// SCSS
+import './styles/scss/app.scss';
 
 // Material dependencies
 //import '@angular/material';

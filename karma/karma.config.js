@@ -25,17 +25,6 @@ module.exports = function (config) {
 
     colors: true,
 
-    coverageReporter: {
-      dir: './../coverage/',
-      reporters: [
-          { type: 'json', subdir: '.', file: 'coverage.json' },
-          { type: 'text-summary' },
-          //{ type: 'html', subdir: 'html' }
-          // Uncomment if you want LCOV
-          //{ type: 'lcovonly', subdir: '.' }
-      ]
-    },
-
     files: [
       { pattern: './karma-test-shim.js', watched: false }
     ],
@@ -49,16 +38,13 @@ module.exports = function (config) {
     },
 
     plugins: [
-        'karma-webpack',
-        'karma-jasmine',
-        'karma-coverage',
-        //'karma-remap-coverage',
-        //'karma-remap-istanbul',
-        'karma-spec-reporter',
-        'karma-sourcemap-loader',
         'karma-chrome-launcher',
-        //'karma-phantomjs-launcher',
-        //'karma-jasmine-html-reporter'
+        'karma-coverage',
+        'karma-jasmine',
+        'karma-remap-coverage',
+        'karma-sourcemap-loader',
+        'karma-spec-reporter',
+        'karma-webpack',
     ],
 
     port: 9876,
@@ -69,7 +55,16 @@ module.exports = function (config) {
 
     singleRun: true,
 
-    reporters: ['spec', 'progress', 'coverage'],
+    reporters: ['spec', 'progress', 'coverage', 'remap-coverage'],
+
+    coverageReporter: {
+        type: 'in-memory',
+    },
+
+    remapCoverageReporter: {
+      lcovonly: './coverage/lcov.info',
+      html: './coverage/html',
+    },
 
     webpack: webpackConfig,
 
