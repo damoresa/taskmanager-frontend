@@ -6,10 +6,7 @@ const webpack = require('webpack');
 
 module.exports = {
 
-  devtool: 'cheap-module-source-map',
-  /*devServer: {
-    historyApiFallback: true
-  },*/
+  devtool: 'eval-source-map',
   entry: require('./webpack.entry'),
   output: require('./webpack.output'),
   resolve: require('./webpack.resolve'),

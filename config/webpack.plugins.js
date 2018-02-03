@@ -6,7 +6,6 @@ const autoprefixer = require('autoprefixer');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const ProvidePlugin = require('webpack/lib/ProvidePlugin');
 const webpack = require('webpack');
 
 module.exports = [
@@ -36,12 +35,6 @@ module.exports = [
         chunks: ['polyfills']
     }),
 
-    //
-    // new webpack.optimize.CommonsChunkPlugin({
-    //     name: 'twbs',
-    //     chunks: ['twbs']
-    // }),
-
     // Enable tree shaking of vendor
     new webpack.optimize.CommonsChunkPlugin({
             name: 'vendor',
@@ -57,30 +50,8 @@ module.exports = [
 
     //
     new webpack.optimize.CommonsChunkPlugin({
-        name: ['polyfills', /*'twbs',*/ 'vendor', 'app'].reverse()
+        name: ['polyfills', 'vendor', 'app'].reverse()
     }),
-
-    //
-    // new webpack.ProvidePlugin({
-    //     $: "jquery",
-    //     jQuery: "jquery",
-    //     "window.jQuery": "jquery",
-    //     Tether: "tether",
-    //     "window.Tether": "tether",
-    //     Popper: "popper.js",
-    //     "window.Popper": "popper.js",
-    //     Tooltip: "exports-loader?Tooltip!bootstrap/js/dist/tooltip",
-    //     Alert: "exports-loader?Alert!bootstrap/js/dist/alert",
-    //     Button: "exports-loader?Button!bootstrap/js/dist/button",
-    //     Carousel: "exports-loader?Carousel!bootstrap/js/dist/carousel",
-    //     Collapse: "exports-loader?Collapse!bootstrap/js/dist/collapse",
-    //     Dropdown: "exports-loader?Dropdown!bootstrap/js/dist/dropdown",
-    //     Modal: "exports-loader?Modal!bootstrap/js/dist/modal",
-    //     Popover: "exports-loader?Popover!bootstrap/js/dist/popover",
-    //     Scrollspy: "exports-loader?Scrollspy!bootstrap/js/dist/scrollspy",
-    //     Tab: "exports-loader?Tab!bootstrap/js/dist/tab",
-    //     Util: "exports-loader?Util!bootstrap/js/dist/util"
-    // }),
 
     //
     new ExtractTextPlugin('[name].[contenthash].css'),
