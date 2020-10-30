@@ -8,8 +8,11 @@ addons:
   sonarcloud:
     organization: "damoresa-github"
     token:
-      secure: $SONAR_TOKEN
-script: npm run build:production:aot && cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js && sonar-scanner
+      secure: hV3Lq4aoQP+Pk+L6X8KR8j2tk6i9DQd3cDzBtUreKgTGQSd1+VL8mbz8H/2aG2Gwx2H+0JKPzvT7JEtK6lA1JN8KjiBTuazbq0XbPMlQuki+XruNgXkcYEVD08m1mKRbrzSlDuAFotGsLa1KOzKd2SOT1qyQuiSeKC/2L/2/8P90o/GwzAzusNgOBQ4BdNu321KAsZeuCkI1Qlg3bHVjlt+yLqiluat6ThTQRjsaFu8aVe2NkjkZT8EiOgC5wYeaZ4cB512MLMxdl/2zqreCdLb2Rh1e1kJdY/5GW4BBM7cP4zdnUpNQ84bbHv7PbrtOvQWfDK3yR8UdqNzIPBdHFnAeqRLudW41lpOJY0Qq52oqvbhJqdzzb3Blor8nZ2fP125/MTZ3AfDgTEkiCgPbfxvBviPsruiVWtoU4NUeJovcCKzNzh0ZT1UTp6k6sLv9jJA1WfrQUO0RIX//2yctkOUtCXmlE38ntpI+7GGadAD5abovIdFvqVDd9KQ7FvWzaQL2xziy8BXN+JrkgslapmPw9/9uzpTyH+/2c9sYE6Ex1Xr7ayn66s3VD3Gbr+oxt43CrzwIXOMp+vCYD2B1m00+UFQXyuUMGWtoTnk/kPH79buFTS0cSCjFKf3+1qRPUPLzrcY1KbgL4N4/fKW1H2dr2Dm09yMC6okpLMVNSfc=
+script:
+- npm run build:production:aot
+- cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+- sonar-scanner
 deploy:
   provider: surge
   project: ./dist/
