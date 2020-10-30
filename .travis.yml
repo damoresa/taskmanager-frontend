@@ -17,4 +17,3 @@ deploy:
   provider: surge
   project: ./dist/
   domain: ng-taskmanager.surge.sh
-  skip_cleanup: true
