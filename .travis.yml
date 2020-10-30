@@ -1,6 +1,6 @@
 language: node_js
 node_js:
-  - "8.9.1"
+  - "10.23.0"
 before_install:
 - sudo apt-get -y install libgconf-2-4
 cache:
@@ -10,9 +10,9 @@ addons:
   apt:
     update: true
   sonarcloud:
-    organization: "damoresa-github"
+    organization: damoresa-github
     token:
-      secure: hV3Lq4aoQP+Pk+L6X8KR8j2tk6i9DQd3cDzBtUreKgTGQSd1+VL8mbz8H/2aG2Gwx2H+0JKPzvT7JEtK6lA1JN8KjiBTuazbq0XbPMlQuki+XruNgXkcYEVD08m1mKRbrzSlDuAFotGsLa1KOzKd2SOT1qyQuiSeKC/2L/2/8P90o/GwzAzusNgOBQ4BdNu321KAsZeuCkI1Qlg3bHVjlt+yLqiluat6ThTQRjsaFu8aVe2NkjkZT8EiOgC5wYeaZ4cB512MLMxdl/2zqreCdLb2Rh1e1kJdY/5GW4BBM7cP4zdnUpNQ84bbHv7PbrtOvQWfDK3yR8UdqNzIPBdHFnAeqRLudW41lpOJY0Qq52oqvbhJqdzzb3Blor8nZ2fP125/MTZ3AfDgTEkiCgPbfxvBviPsruiVWtoU4NUeJovcCKzNzh0ZT1UTp6k6sLv9jJA1WfrQUO0RIX//2yctkOUtCXmlE38ntpI+7GGadAD5abovIdFvqVDd9KQ7FvWzaQL2xziy8BXN+JrkgslapmPw9/9uzpTyH+/2c9sYE6Ex1Xr7ayn66s3VD3Gbr+oxt43CrzwIXOMp+vCYD2B1m00+UFQXyuUMGWtoTnk/kPH79buFTS0cSCjFKf3+1qRPUPLzrcY1KbgL4N4/fKW1H2dr2Dm09yMC6okpLMVNSfc=
+      secure: XrjC6fk+6D9Ew6e/PrQXSm3LiQS4G7H7o6vkjB4KPIA9X+idyIGvfsHg+/EhAmIi6/96PtLKscWCpE675RmQ8HS4/B+mANSW45/wycAEat53vhn95LBCT1pXt/3hDkdFaV597jUZnRGzoB34oA114Ury0rdmgy7rQVFJWNUrcMixqqmphNj5TOM3F+49fasgEX60uCKjE7MRH9pLOL5taAUr/SyHE5AveSwckrN0dOJ8efkL/91OglKbvCPICW2EDGeQTiRdAcQrfrKjiSsh45+SnZVSV11TKE+BDp0sgY/U9yFYR7n2VCl27i9GBZ10iXQqe3K2c5CLcw2pj8JapyNxORZrBgt7P8QABOsS3w8wzH67zDtJlYJvWZAUd/WktFijQCW3ddYuwXi7+zOBy6Rp47dv6T19E20MeQbfdagINorYbT18gqKBD+Hd8lVY5JpliVGOk6JEkmd61dCuaEO2Nhr0Lz1//RxZhrvxgKrtPRdQWs6ZOzFMjzyS5RSvjQHtJPz9ZjXRJ1ThvE0GVFfJk4AMblzd6BXqnoLs7LHD/jfFDe7PKs//fFzuDT1C6wQDBfd/fla/zIFySrhwvfwD2cWY2wz37eeRw9X/a9VmTxQMTt+73aR3dECMmPhRdMUsMaVhht+PCjWKiuPqXELChDIASr7QwE9Yj0XAums=
 script:
 - npm run build:production:aot
 - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
