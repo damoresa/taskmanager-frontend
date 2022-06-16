@@ -84,7 +84,7 @@
     "coveralls": "3.0.0",
     "cross-env": "5.0.0",
     "css-loader": "0.28.0",
-    "electron": "1.6.16",
+    "electron": "15.5.5",
     "enhanced-resolve": "3.3.0",
     "exports-loader": "0.6.4",
     "extract-text-webpack-plugin": "2.1.0",
